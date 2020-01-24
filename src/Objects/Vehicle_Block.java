@@ -4,7 +4,7 @@ public class Vehicle_Block extends Simulator_Obj{
     private int x_location;
     private int y_location;
     public Vehicle_Block(int x_location, int y_location){
-        super("Vehicle Block", "/Users/waiyanpaingoo/Desktop/Second Sem/Java/Assessment_NanKaw/src/Photo/Car.png",
+        super("Vehicle Block", "/Users/user/Desktop/Assessment_NanKaw/src/Photo/Car.png",
                 false, null, 'E', false, null);
         this.x_location = x_location;
         this.y_location = y_location;

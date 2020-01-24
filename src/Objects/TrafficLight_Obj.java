@@ -12,7 +12,7 @@ public class TrafficLight_Obj extends Simulator_Obj {
     private int y_location;
 
     public TrafficLight_Obj(int x_location, int y_location) {
-        super("Traffic Light Block", "/Users/waiyanpaingoo/Desktop/Second Sem/Java/Assessment_NanKaw/src/Photo/Green.jpg",
+        super("Traffic Light Block", "/Users/user/Desktop/Assessment_NanKaw/src/Photo/Green.jpg",
                 false, null, 'E', false, null);
         this.x_location = x_location;
         this.y_location = y_location;
@@ -26,12 +26,12 @@ public class TrafficLight_Obj extends Simulator_Obj {
 
         if(this.is_red)
         {
-            this.setPic_location("/Users/waiyanpaingoo/Desktop/Second Sem/Java/Assessment_NanKaw/src/Photo/Green.jpg");
+            this.setPic_location("/Users/user/Desktop/Assessment_NanKaw/src/Photo/Green.jpg");
             this.is_red = false;
         }
         else
         {
-            this.setPic_location("/Users/waiyanpaingoo/Desktop/Second Sem/Java/Assessment_NanKaw/src/Photo/radd.jpg");
+            this.setPic_location("/Users/user/Desktop/Assessment_NanKaw/src/Photo/radd.jpg");
             this.is_red = true;
         }
 
