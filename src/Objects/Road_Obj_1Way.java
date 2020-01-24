@@ -4,7 +4,7 @@ public class Road_Obj_1Way {
     private int ROW, COL,x, y;
     private String rotation;
     private Simulator_Obj[][] objAry;
-    private String pic_location = "Assessment_Nan_Kaw/src/Photo/road.jpg";
+    private String pic_location = "/Users/user/Desktop/Assessment_NanKaw/src/Photo/Road.jpg";
 
     public Road_Obj_1Way(int row, int col,int X , int Y, String rot) {
         this.x = X;
