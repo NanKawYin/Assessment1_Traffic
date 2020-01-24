@@ -113,6 +113,136 @@ public class Game_GUI extends SimulatorValue implements ActionListener, KeyListe
     }
 
     @Override
+    public void actionPerformed(ActionEvent e) {
+        Object source = e.getSource();
+        if (source == btn_reset) {
+            clearMap();
+        } else if (source == btn_load) {
+            loadMap();
+        }
+        else if (source == btn_save) {
+            try {
+                saveMap();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
+        else if (source == btn_exit) {
+            this.dispose();
+        }
+        else if (source == btn_sum) {
+            carSpeed = carSpeed + 10;
+            carTimer.setDelay(carSpeed);
+        }
+        else if (source == btn_sub) {
+            carSpeed = carSpeed - 10;
+            carTimer.setDelay(carSpeed);
+        }
+        else if (source == btn_simulate) {
+            lbl_mode.setText("Mode: Simulation |");
+            btn_reset.setVisible(false);
+            btn_load.setVisible(false);
+            btn_save.setVisible(false);
+            btn_exit.setVisible(false);
+            btn_pause.setVisible(true);
+            btn_go.setVisible(false);
+
+            btn_sum.setVisible(true);
+            btn_sub.setVisible(true);
+            lbl_car.setVisible(true);
+
+            btn_stop.setVisible(true);
+            btn_simulate.setVisible(false);
+
+            btn_road1.setVisible(false);
+            btn_road2.setVisible(false);
+            btn_road3.setVisible(false);
+
+            carTimer.start();
+            trafficTimer.start();
+            trafficTimerSwitch(true);
+        }
+        else if (source == btn_stop) {
+            lbl_mode.setText("Mode: Editing |");
+            btn_reset.setVisible(true);
+            btn_load.setVisible(true);
+            btn_save.setVisible(true);
+            btn_exit.setVisible(true);
+            btn_pause.setVisible(false);
+            btn_go.setVisible(false);
+            btn_stop.setVisible(false);
+            btn_simulate.setVisible(true);
+            btn_road1.setVisible(true);
+            btn_road2.setVisible(true);
+            btn_road3.setVisible(true);
+
+            btn_sum.setVisible(false);
+            btn_sub.setVisible(false);
+            lbl_car.setVisible(false);
+
+            carTimer.stop();
+            trafficTimer.stop();
+            trafficTimerSwitch(false);
+            clearCars();
+        }
+        else if (source == btn_pause) {
+            btn_go.setVisible(true);
+            btn_pause.setVisible(false);
+            carTimer.stop();
+            trafficTimerSwitch(false);
+        }
+        else if (source == btn_go) {
+            btn_pause.setVisible(true);
+            btn_go.setVisible(false);
+            carTimer.start();
+            trafficTimerSwitch(true);
+        }
+        else if (source == btn_road1) {
+            btn_reset.setEnabled(false);
+            btn_load.setEnabled(false);
+            btn_save.setEnabled(false);
+            btn_simulate.setEnabled(false);
+            btn_road1.setEnabled(false);
+            btn_road2.setEnabled(false);
+            btn_road3.setEnabled(false);
+
+            panel1.setFocusable(true);
+            panel1.requestFocusInWindow();
+
+            showEditRoad(default_road_spawn_X,default_road_spawn_Y,1, "H");
+        }
+        else if (source == btn_road2) {
+            btn_reset.setEnabled(false);
+            btn_load.setEnabled(false);
+            btn_save.setEnabled(false);
+            btn_simulate.setEnabled(false);
+            btn_road1.setEnabled(false);
+            btn_road2.setEnabled(false);
+            btn_road3.setEnabled(false);
+
+            panel1.setFocusable(true);
+            panel1.requestFocusInWindow();
+
+            showEditRoad(default_road_spawn_X,default_road_spawn_Y,4, "H");
+        }
+        else if (source == btn_road3) {
+            btn_reset.setEnabled(false);
+            btn_load.setEnabled(false);
+            btn_save.setEnabled(false);
+            btn_simulate.setEnabled(false);
+            btn_road1.setEnabled(false);
+            btn_road2.setEnabled(false);
+            btn_road3.setEnabled(false);
+
+            panel1.setFocusable(true);
+            panel1.requestFocusInWindow();
+
+            showEditRoad(default_road_spawn_X,default_road_spawn_Y,3, "WE");
+        }
+
+    }
+
+    @Override
     public void keyTyped(KeyEvent e) {
         char key = e.getKeyChar();
         System.out.println("code" + e.getExtendedKeyCode());
@@ -165,11 +295,6 @@ public class Game_GUI extends SimulatorValue implements ActionListener, KeyListe
 
     @Override
     public void keyReleased(KeyEvent e) {
-
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
 
     }
 }
