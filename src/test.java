@@ -1,10 +1,10 @@
-import GUI.GameGUI;
+import GUI.Game_GUI;
 
 public class test
 {
     public static void main(String[]args)
     {
-        new GameGUI();
+        new Game_GUI();
 
     }
 }
