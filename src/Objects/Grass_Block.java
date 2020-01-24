@@ -4,7 +4,7 @@ public class Grass_Block extends Simulator_Obj{
 
     public Grass_Block(){
 
-        super("Grass Block", "/Users/waiyanpaingoo/Desktop/Second Sem/Java/Assessment_Nan_Kaw/src/Photo/Grass.jpg",
+        super("Grass Block", "/Users/user/Desktop/Assessment_NanKaw/src/Photo/grass_.png",
                 false, null, new char[]{'X'}, false, null);
     }
 }
