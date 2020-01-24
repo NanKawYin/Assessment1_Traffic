@@ -1,19 +1,14 @@
 package Objects;
 
-import GUI.SimulatorValue;
-
-import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 public class TrafficLight_Obj extends Simulator_Obj {
     private boolean is_red = false;
     private int x_location;
     private int y_location;
 
-    public TrafficLight_Obj(int x_location, int y_location) {
-        super("Traffic Light Block", "/Users/user/Desktop/Assessment_NanKaw/src/Photo/Green.jpg",
-                false, null, 'E', false, null);
+    public TrafficLight_Obj(int x_location, int y_location, char[] direction) {
+        super("Traffic Light Block", "/Users/waiyanpaingoo/Desktop/Second Sem/Java/Assessment_Nan_Kaw/src/Photo/Green_Light.jpg",
+                false, null, direction, false, null);
+        this.is_red = false;
         this.x_location = x_location;
         this.y_location = y_location;
     }
@@ -26,12 +21,12 @@ public class TrafficLight_Obj extends Simulator_Obj {
 
         if(this.is_red)
         {
-            this.setPic_location("/Users/user/Desktop/Assessment_NanKaw/src/Photo/Green.jpg");
+            this.setPic_location("/Users/waiyanpaingoo/Desktop/Second Sem/Java/Assessment_Nan_Kaw/src/Photo/Green_Light.jpg");
             this.is_red = false;
         }
         else
         {
-            this.setPic_location("/Users/user/Desktop/Assessment_NanKaw/src/Photo/radd.jpg");
+            this.setPic_location("/Users/waiyanpaingoo/Desktop/Second Sem/Java/Assessment_Nan_Kaw/src/Photo/Red_Light.jpg");
             this.is_red = true;
         }
 
@@ -41,15 +36,9 @@ public class TrafficLight_Obj extends Simulator_Obj {
         return x_location;
     }
 
-    public void setX_location(int x_location) {
-        this.x_location = x_location;
-    }
 
     public int getY_location() {
         return y_location;
     }
 
-    public void setY_location(int y_location) {
-        this.y_location = y_location;
-    }
 }
