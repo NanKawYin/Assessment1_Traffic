@@ -10,7 +10,7 @@ public class Road_Obj_3Way {
     private TrafficLight_Obj tf_W;
     private TrafficLight_Obj[] tf_ary;
     private String[] rotationAry;
-    private String pic_location = "Assessment_Nan_Kaw/src/Photo/road.jpg";
+    private String pic_location = "/Users/user/Desktop/Assessment_NanKaw/src/Photo/Road.jpg";
 
     public Road_Obj_3Way(int row, int col,int X , int Y, String rot) {
         this.x = X;
